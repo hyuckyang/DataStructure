@@ -1,5 +1,6 @@
 #include <cmath>
 #include <stdio.h>
+#include "List/ArrayList.h"
 
 #pragma region 팩토리얼 (Factorial) 함수 (재귀함수)
 
@@ -113,6 +114,27 @@ void BinarySearchPrint()
 	printf("BSearch Recur Target = 4 index %d \n", BinarySearchRecur(arr, 0, 4, 5));
 }
 
+#pragma endregion
+
+#pragma region List
+
+/**
+ * 작성중
+ */
+void ArrayListPrint()
+{
+	ArrayList<int>* arr = new ArrayList<int>();
+	arr->Insert(1);
+	arr->Insert(2);
+	arr->Insert(3);
+
+	arr->Remove();
+	arr->RemoveAt(1);
+	arr->print();
+
+
+}
+
 #pragma endregion 
 
 int main()
@@ -120,4 +142,7 @@ int main()
 	FactorialPrint();
 	FibonacciPrint();
 	BinarySearchPrint();
+
+	ArrayListPrint();
+
 }

@@ -1,6 +1,7 @@
 #include "ArrayList.h"
 #include <stdio.h>
 
+
 template <typename T>
 ArrayList<T>::ArrayList()
 {
@@ -33,7 +34,7 @@ bool ArrayList<T>::First(T &data)
 	}
 
 	cursur = 0;
-	data = arr[cursur];
+	data = arr[cursur]->Get();
 	return true;
 }
 
@@ -47,7 +48,7 @@ bool ArrayList<T>::Next(T& data)
 	}
 
 	cursur++;
-	data = arr[cursur];
+	data = arr[cursur] -> Get();
 
 	return true;
 }
@@ -55,6 +56,7 @@ bool ArrayList<T>::Next(T& data)
 template <typename T>
 T ArrayList<T>::Remove()
 {
+	cursur = length - 1;
 	return RemoveAt(cursur);
 }
 
@@ -84,13 +86,15 @@ T ArrayList<T>::RemoveAt(int index)
 }
 
 template <typename T>
-void ArrayList<T>::print()
+void ArrayList<T>::Print()
 {
-	// ¿€º∫ ¡ﬂ
+	T data;
+	if(First(data))
+	{
+		printf("%d ", data);
+		while (Next(data))
+		{
+			printf("%d  ", data);
+		}
+	}
 }
-
-
-
-
-
-

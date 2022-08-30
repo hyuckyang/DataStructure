@@ -6,8 +6,10 @@ class ArrayNode
 {
 	T data;
 public:
-	void Set(T data) { this->data = data; }
+	ArrayNode(T data) { Set(data); }
+	~ArrayNode() { }
 
+	void Set(T data) { this->data = data; }
 	T Get() { return data; }
 };
 
@@ -19,7 +21,7 @@ public:
 template<typename T>
 class ArrayList
 {
-	ArrayNode<T>* arr[LIST_LEN];
+	ArrayNode<T>* arr[LIST_LEN] = { nullptr, };
 	int length;
 	int cursur;
 
@@ -32,8 +34,7 @@ public:
 	bool Next(T& data);
 	T Remove ();
 	T RemoveAt(int index);
-
-	void print();
+	void Print();
 
 	int GetLength() { return length; }
 

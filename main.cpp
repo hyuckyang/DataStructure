@@ -1,6 +1,7 @@
 #include <cmath>
 #include <stdio.h>
 #include "List/ArrayList.h"
+#include "List/ArrayList.cpp"
 
 #pragma region ÆÑÅä¸®¾ó (Factorial) ÇÔ¼ö (Àç±ÍÇÔ¼ö)
 
@@ -124,13 +125,15 @@ void BinarySearchPrint()
 void ArrayListPrint()
 {
 	ArrayList<int>* arr = new ArrayList<int>();
-	arr->Insert(1);
-	arr->Insert(2);
-	arr->Insert(3);
+	arr->Insert(11);
+	arr->Insert(11);
+	arr->Insert(22);
+	arr->Insert(22);
+	arr->Insert(33);
 
 	arr->Remove();
 	arr->RemoveAt(1);
-	arr->print();
+	arr->Print();
 
 
 }
@@ -139,9 +142,9 @@ void ArrayListPrint()
 
 int main()
 {
-	FactorialPrint();
+	/*FactorialPrint();
 	FibonacciPrint();
-	BinarySearchPrint();
+	BinarySearchPrint();*/
 
 	ArrayListPrint();
 

@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include "List/ArrayList.h"
 #include "List/ArrayList.cpp"
+#include "List/LinkedList.h"
+#include "List/LinkedList.cpp"
+#include "List/DoubleLinkedList.h"
+#include "List/DoubleLinkedList.cpp"
 
 #pragma region ÆÑÅä¸®¾ó (Factorial) ÇÔ¼ö (Àç±ÍÇÔ¼ö)
 
@@ -130,11 +134,87 @@ void ArrayListPrint()
 	arr->Insert(22);
 	arr->Insert(22);
 	arr->Insert(33);
-
 	arr->Remove();
 	arr->RemoveAt(1);
 	arr->Print();
+}
 
+void LinkedListPrintEvent(LinkedNode<int>* head)
+{
+	LinkedNode<int>* node = head;
+	while (node != nullptr)
+	{
+		printf("%d ", node->GetData());
+		if (node->GetLink() != nullptr)
+			printf("-> ");
+		else
+			printf("\n");
+
+		node = node->GetLink();
+	}
+}
+
+void LinkedListPrint()
+{
+	LinkedList<int>* list = new LinkedList<int>(LinkedListPrintEvent);
+	list->Add(1);
+	list->Add(2);
+	list->Add(3);
+	list->Add(4);
+	list->Print();
+	list->Reverse();
+	list->Print();
+
+}
+
+void DoubleLinkedListPrintEvent(DoubleLinkedNode<int>* head, bool reverse)
+{
+	DoubleLinkedNode<int>* pNode = head;
+	if (pNode == nullptr)
+		return;
+
+	if (reverse)
+	{
+		while (pNode->GetTail() != nullptr)
+			   pNode = pNode->GetTail();
+	}
+
+	while (pNode != nullptr)
+	{
+		printf("%d ", pNode->GetData());
+		
+		DoubleLinkedNode<int>* pNext = pNode->GetTail();
+		if (reverse)
+			pNext = pNode->GetHead();
+		
+		if (pNext != nullptr)
+			printf("-> ");
+		else
+			printf("\n");
+		
+		pNode = pNext;
+	}
+}
+
+void DoubleLinkedListPrint()
+{
+	DoubleLinkedList<int>* list = new DoubleLinkedList<int>(DoubleLinkedListPrintEvent);
+	list->Add(3);
+	list->Add(4);
+	list->Insert(2);
+	list->Insert(1);
+	list->Print(false);
+	list->Remove();
+	list->Print(false);
+
+	list->RemoveAt(1);
+	list->Print(false);
+
+	list->RemoveAt(1);
+	list->Print(false);
+
+	list->RemoveAt(0);
+	list->Print(false);
 
 }
 
@@ -144,8 +224,8 @@ int main()
 {
 	/*FactorialPrint();
 	FibonacciPrint();
-	BinarySearchPrint();*/
-
+	BinarySearchPrint();
 	ArrayListPrint();
-
+	LinkedListPrint();*/
+	DoubleLinkedListPrint();
 }

@@ -226,6 +226,6 @@ int main()
 	FibonacciPrint();
 	BinarySearchPrint();
 	ArrayListPrint();
-	LinkedListPrint();*/
-	DoubleLinkedListPrint();
+	LinkedListPrint();
+	DoubleLinkedListPrint();*/
 }

@@ -1,16 +1,11 @@
 #include <cmath>
 #include <stdio.h>
-#include "Stack/StackPtr.h"
-#include "Stack/StackPtr.cpp"
-#include "Stack/CalcStackPtr.h"
 #include "List/ArrayList.h"
 #include "List/ArrayList.cpp"
 #include "List/LinkedList.h"
 #include "List/LinkedList.cpp"
 #include "List/DoubleLinkedList.h"
 #include "List/DoubleLinkedList.cpp"
-#include "Tree/BinaryTree.h"
-#include "Tree/BinaryTree.cpp"
 
 #pragma region 팩토리얼 (Factorial) 함수 (재귀함수)
 
@@ -126,29 +121,6 @@ void BinarySearchPrint()
 
 #pragma endregion
 
-#pragma region Stack
-
-void StackPrintEvent(int data)
-{
-	printf("%d", data);
-}
-
-
-void StackPrint()
-{
-	/*auto stackPtr = new StackPtr<int>(StackPrintEvent);
-	stackPtr->Push(1);
-	stackPtr->PrintAll();
-
-	int data;
-	stackPtr->Pop(data);
-	stackPtr->PrintAll();
-	printf("pop data %d\n", data); */
-}
-
-#pragma endregion
-
-
 #pragma region List
 
 /**
@@ -234,61 +206,17 @@ void DoubleLinkedListPrint()
 	list->Print(false);
 	list->Remove();
 	list->Print(false);
+
 	list->RemoveAt(1);
 	list->Print(false);
+
 	list->RemoveAt(1);
 	list->Print(false);
+
 	list->RemoveAt(0);
 	list->Print(false);
 
 }
-
-#pragma endregion 
-
-#pragma region Tree
-
-void BinaryTreePrintEvent(int data)
-{
-	printf("%d - ", data);
-}
-
-
-void BinaryTreePrint()
-{
-	/// <summary>
-	/// C# 처럼 좀 편한게 auto 사용하자..
-	/// </summary>
-	auto n1 = new BTreeNode<int>(15);
-	auto n2 = new BTreeNode<int>(4);
-	auto n3 = new BTreeNode<int>(20);
-
-	auto n4 = new BTreeNode<int>(1);
-	//auto n5 = new BTreeNode<int>(330);
-	
-	auto n6 = new BTreeNode<int>(16);
-	auto n7 = new BTreeNode<int>(25);
-
-	n1->SetLeft(n2);
-	n1->SetRight(n3);
-
-	n2->SetLeft(n4);
-	//n2->SetRight(n5);
-
-	n3->SetLeft(n6);
-	n3->SetRight(n7);
-
-
-	auto bTree = new BinaryTree<int>(BinaryTreePrintEvent, n1);
-
-	
-	printf("중위 순회\n");
-	bTree->InOrder();
-	printf("\n전위 순회\n");
-	bTree->PreOrder();
-	printf("\n후위 순회\n");
-	bTree->PostOrder();
-}
-
 
 #pragma endregion 
 
@@ -298,8 +226,6 @@ int main()
 	FibonacciPrint();
 	BinarySearchPrint();
 	ArrayListPrint();
-	LinkedListPrint();
+	LinkedListPrint();*/
 	DoubleLinkedListPrint();
-	BinaryTreePrint();
-	StackPrint();*/
 }

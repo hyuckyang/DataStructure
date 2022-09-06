@@ -76,21 +76,4 @@ void BinaryTree<T>::PostOrderPrint(BTreeNode<T>* node)
 	print(node->GetData());
 }
 
-//template <typename T>
-//void BinaryTree<T>::InOrderIter(T data)
-//{
-//	auto node = new BTreeNode<T>(data);
-//	if (pRoot == nullptr)
-//	{
-//		pRoot = node;
-//		return;
-//	}
-//	
-//	auto pNode = pRoot;
-//	while (true)
-//	{
-//		
-//	}
-//
-//}
 

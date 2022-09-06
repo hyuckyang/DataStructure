@@ -6,6 +6,8 @@
 #include "List/LinkedList.cpp"
 #include "List/DoubleLinkedList.h"
 #include "List/DoubleLinkedList.cpp"
+#include "Tree/HeapArrayTree.h"
+#include "Tree/HeapArrayTree.cpp"
 
 #pragma region ÆÑÅä¸®¾ó (Factorial) ÇÔ¼ö (Àç±ÍÇÔ¼ö)
 
@@ -220,6 +222,31 @@ void DoubleLinkedListPrint()
 
 #pragma endregion 
 
+#pragma region Tree
+
+void HeapArrayTreeDataPrintFunc(char data)
+{
+	printf("%c", data);
+}
+
+void HeapArrayTreePrint()
+{
+	auto heapArr = new HeapArrayTree<char>(HeapArrayTreeDataPrintFunc);
+	heapArr->Insert('A', 1);
+	heapArr->Insert('B', 2);
+	heapArr->Insert('C', 3);
+	heapArr->Insert('D', 4);
+	heapArr->Insert('E', 5);
+	heapArr->Insert('F', 6);
+	//heapArr->Insert(7, 7);
+	heapArr->Delete();
+
+	heapArr->Print();
+}
+
+
+#pragma endregion 
+
 int main()
 {
 	/*FactorialPrint();
@@ -228,4 +255,6 @@ int main()
 	ArrayListPrint();
 	LinkedListPrint();
 	DoubleLinkedListPrint();*/
+
+	HeapArrayTreePrint();
 }

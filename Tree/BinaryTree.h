@@ -41,5 +41,5 @@ public:
 	// 후위 순위 == left -> right -> root;
 	void PostOrder();
 
-	//void InOrderIter(T data);
+	//
 };
